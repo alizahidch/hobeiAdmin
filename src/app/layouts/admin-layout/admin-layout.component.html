@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+        <sidebar-cmp></sidebar-cmp>
+    </div>
+    <div style="text-align: center;" class="row">
+        <div class="col-md-2"></div>
+            <div style="height: 60px;margin-bottom: -10px;" class="col-md-10"><div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
+                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                  <i class="nc-icon nc-simple-remove"></i>
+                </button>
+                <span data-notify="icon" class="nc-icon nc-bell-55"></span>
+                <span data-notify="message">Get notified of new messages.</span>
+              </div></div>
+          </div>
+    <div class="main-panel">
+         
+
+        <navbar-cmp></navbar-cmp>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+        <footer-cmp></footer-cmp>
+    </div>
+</div>
+<!-- <fixedplugin-cmp></fixedplugin-cmp> -->

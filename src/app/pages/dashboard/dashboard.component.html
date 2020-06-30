@@ -1,0 +1,357 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="bars">
+      <div class="row">
+        <div class="col-md-6"><h6 class="revenueGen">Total Revenue Generated</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+      <div class="bars1">
+          <div class="row">
+              <div class="col-md-6"><h6 class="revenueGen">Total Profit Generated</h6>
+              </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="bars2">
+            <div class="row">
+                <div class="col-md-6"><h6 class="revenueGen">Profit Percentage Target</h6>
+                </div>
+              </div>
+        </div>
+      </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats crd">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            
+            <div class="icon-big text-center icon-warning">
+              <!-- <i class="nc-icon nc-globe text-warning"></i> -->
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <small class="topTitle">                This Month
+              </small>
+            <div style="text-align: left;font-size: 40px;" class="numbers">
+
+              <!-- <p class="card-category">Capacity</p>
+              <p class="card-title">150GB
+                <p> -->
+                    23
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center;" class="card-footer ">
+          Numbers Sold
+        <!-- <hr> -->
+        <!-- <div class="stats">
+          <i class="fa fa-refresh"></i> Update Now
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats crd">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <!-- <i class="nc-icon nc-money-coins text-success"></i> -->
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+
+              <small class="topTitle">                Last Month
+                </small>
+            <div style="text-align: left;font-size: 20px;" class="numbers">
+              <!-- <p class="card-category">Revenue</p>
+              <p class="card-title">$ 1,345
+                <p> -->
+                    $ 23,852
+                   <small>Net Profit</small> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <!-- <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Last day
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats crd">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Errors</p>
+              <p class="card-title">23
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-clock-o"></i> In the last hour
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats crd">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-favourite-28 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Followers</p>
+              <p class="card-title">+45K
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-refresh"></i> Update now
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <div class="card ">
+      <div style="    text-align: center;
+      " class="card-header ">
+        <h5 class="card-title">Your Numbers</h5>
+        <p class="card-category">summary list | sold numbers | listed numbers</p>
+<div class="row">
+  <div class="col-md-4">
+    <select class="select1" name="" id="">
+      <option value="">Sort</option>
+    </select>
+  </div>
+  <div class="col-md-4">  <select class="select1" name="" id="">
+      <option value="">Sort</option>
+    </select></div>
+  <div class="col-md-4">  <select class="select1" name="" id="">
+      <option value="">Sort</option>
+    </select></div>
+
+
+</div>   
+   </div>
+
+      <div class="card-body ">
+        <!-- <canvas id=chartHours width="400" height="100"></canvas> -->
+        <div *ngFor="let x of resultNummbers" class="row">
+          <div class="col-md-4">
+            <small>Expiry: {{x.date}}</small>
+            <p class="numberDisp">{{x.number}}</p>
+          </div>
+          <!-- <div class="dropdownBar"></div> -->
+
+          <div class="col-md-3">
+            <small>Views</small>
+            <p class="numberDisp">102</p>
+          </div>
+          <div class="col-md-3">
+            <small>Listed Price</small>
+            <p class="numberDisp">
+                {{x.price}}
+            </p>
+          </div>
+          <div class="col-md-1">
+              <i class="fa fa-info-circle" aria-hidden="true"></i>
+
+          </div>
+
+        </div>
+ 
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-history"></i> Updated 3 minutes ago
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="col-md-3">
+  <div class="card listNumber">
+<div style="text-align: center;" class="card-header">
+  <h5 style="text-align: center;" class="card-title">
+      List your Number
+  </h5>
+  <small>Your Number</small>
+<!-- 
+  <div class="yourNumber">
+    <input maxlength="8" value="91995280" type="text" class="numberEntry">
+  </div> -->
+
+
+  <input [(ngModel)]="number" maxlength="8" placeholder="91995280" type="text" class="yourNumber ">
+    <!-- <input maxlength="8" value="91995280" type="text" class="numberEntry"> -->
+
+  <small style="float: left;">Suggested Price Valuation:</small>
+  <small style="float: right;">$2986 - $3388</small>
+  <!-- <input class="numberEntry" type="text" style="float: right;" value="$2986 - $3388">  -->
+
+</div>
+<div class="card-body ">
+
+  <small>Selling Price</small>
+
+  <input [(ngModel)]="price" placeholder="$2300" type="text"  class="yourNumber">
+    <!-- <input value="$2300" type="text" class="numberEntry">
+  </div> -->
+<select [(ngModel)]="operator" aria-placeholder="operator" class="yourNumber"  name="" id="">
+<option value="Singtel">Singtel</option>
+<option value="M1">M1</option>
+<option value="Starhub">Starhub</option>
+<option value="Circles life">Circles life</option>
+<option value="CM link">CM link</option>
+<option value="Giga">Giga</option>
+<option value="Gomo">Gomo</option>
+<option value="Myrepublic">Myrepublic</option>
+<option value="TPG">TPG</option>
+<option value="VIVIFI">VIVIFI</option>
+<option value="Zero1">Zero1</option>
+
+
+
+</select>
+    <input [(ngModel)]="serialNumber" style="font-size: 14px;" placeholder="Serial Number" type="text" class="yourNumber" >
+    <input [(ngModel)]="date" style="font-size: 14px;" value="" type="date" class="yourNumber" >
+<small style="font-size: 10px;">
+  Clicking submit, you confirm that the number above belongs to you or your company, and you have the authority to trade and transfer the number to the buyer.
+</small>
+<div style="text-align: center;">
+<button (click)="createNumber()" class="subTon">
+  Submit
+</button>
+
+</div>
+
+</div>
+
+
+  </div>
+</div>
+<div style="margin-left: 40px;" class="col-md-3">
+    <div class="card listNumber">
+  <div style="text-align: center;" class="card-header">
+    <h5 style="text-align: center;" class="card-title">
+        Edit Number
+    </h5>
+    <small>Your Number</small>
+  
+    <div class="yourNumber">
+      <input value="91995280" type="text" class="numberEntry">
+    </div>
+  
+    <small style="float: left;">Suggested Price Valuation:</small>
+    <small style="float: right;">$2986 - $3388</small>
+  
+  </div>
+  <div class="card-body ">
+  
+    <small>Selling Price</small>
+  
+ 
+      <input value="$2300" type="number" class="yourNumber">
+ 
+  <select class="yourNumber"  name="" id="">
+  <option value="">Operator</option></select>
+  
+
+      <input style="font-size: 14px;" value="Serial Number" type="text" class="yourNumber" >
+      <input style="font-size: 14px;" value="Serial Number" type="date" class="yourNumber" >
+  <small style="font-size: 10px;">
+      By clicking submit, you confirm that the number above belongs to you or your company, and you have the authority to trade and transfer the number to the buyer.
+  </small>
+  <div style="text-align: center;">
+  <button style="background: #EB8989 0% 0% no-repeat padding-box;" class="subTon">
+    Save Changes
+  </button>
+  
+  </div>
+  
+  </div>
+  
+  
+    </div>
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="col-md-4">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Email Statistics</h5>
+        <p class="card-category">Last Campaign Performance</p>
+      </div>
+      <div class="card-body ">
+        <canvas id="chartEmail"></canvas>
+      </div>
+      <div class="card-footer ">
+        <div class="legend">
+          <i class="fa fa-circle text-primary"></i> Opened
+          <i class="fa fa-circle text-warning"></i> Read
+          <i class="fa fa-circle text-danger"></i> Deleted
+          <i class="fa fa-circle text-gray"></i> Unopened
+        </div>
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar"></i> Number of emails sent
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-title">NASDAQ: AAPL</h5>
+        <p class="card-category">Line Chart with Points</p>
+      </div>
+      <div class="card-body">
+        <canvas id="speedChart" width="400" height="100"></canvas>
+      </div>
+      <div class="card-footer">
+        <div class="chart-legend">
+          <i class="fa fa-circle text-info"></i> Tesla Model S
+          <i class="fa fa-circle text-warning"></i> BMW 5 Series
+        </div>
+        <hr/>
+        <div class="card-stats">
+          <i class="fa fa-check"></i> Data information certified
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
