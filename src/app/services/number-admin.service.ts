@@ -19,4 +19,9 @@ fetchNumbers(){
   return this.firestore.collection('numbers').valueChanges();
 }
 
+fetchOrders(){
+  return this.firestore.collection('orders').valueChanges();
+}
+
+
 }
