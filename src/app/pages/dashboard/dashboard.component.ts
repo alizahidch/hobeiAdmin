@@ -23,9 +23,19 @@ price;
 operator;
 serialNumber;
 date;
-
+editNumber;
+editPrice;
+editOperator;
+editSerial;
+editDate;
+editCatrgory;
+editObj={};
 dataObj={};
 resultNummbers:any=[];
+counter;
+sale;
+profit;
+categories=[];
 
     ngOnInit(){
       this.chartColor = "#FFFFFF";
@@ -222,22 +232,76 @@ resultNummbers:any=[];
       this.api.fetchNumbers().subscribe(res=>{
 this.resultNummbers=res;
       })
+
+
+
+this.api.fetchOrders().subscribe(res=>{
+this.counter=res.length
+this.sale=this.counter*50;
+this.profit=this.counter*10;})
+
+
+
+    }
+
+    selectedOne(x){
+      this.editNumber=x.number;
+      this.editPrice=x.price;
+      this.editOperator=x.operator;
+      this.editSerial=x.serial;
+      this.editDate=x.date;
+      this.editCatrgory=x.categories;
     }
 
 
+
 createNumber(){
+  let i=-1;
+  this.categories.forEach(element => {
+    i++
+    this.categories[i]='`'+element+'`'
+  });
+
+
 this.dataObj={
 serial:this.serialNumber,
 number:this.number,
-price:this.price,
+price:Number(this.price),
 operator:this.operator,
-date:this.date
+date:this.date,
+categories:this.categories
 
 }
+console.log(this.dataObj)
 this.api.createNummber(this.dataObj).then(()=>{
   console.log('Write succeeded!');
 }
 )
 
 }
+
+updateNumber(){
+  let i=-1;
+  this.editCatrgory.forEach(element => {
+    i++
+    this.editCatrgory[i]='`'+element+'`'
+  });
+  this.editObj={
+  serial:this.editSerial,
+  number:this.editNumber,
+  price:Number(this.editPrice),
+  operator:this.editOperator,
+  date:this.editDate,
+  categories:this.editCatrgory
+  
+  }
+  this.api.createNummber(this.editObj).then(()=>{
+    console.log('Update succeeded!');
+  }
+  )
+  
+  }
+
+
+
 }

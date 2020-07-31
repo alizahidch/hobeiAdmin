@@ -4,6 +4,8 @@
       <div class="row">
         <div class="col-md-6"><h6 class="revenueGen">Total Revenue Generated</h6>
         </div>
+        <div class="col-md-6"><h6 class="revenueNumber">$52,022</h6>
+        </div>
       </div>
     </div>
   </div>
@@ -13,6 +15,8 @@
           <div class="row">
               <div class="col-md-6"><h6 class="revenueGen">Total Profit Generated</h6>
               </div>
+              <div class="col-md-6"><h6 class="revenueNumber">$37,354</h6>
+              </div>
             </div>
       </div>
     </div>
@@ -21,6 +25,8 @@
         <div class="bars2">
             <div class="row">
                 <div class="col-md-6"><h6 class="revenueGen">Profit Percentage Target</h6>
+                </div>
+                <div class="col-md-6"><h6 class="revenueNumber">86%</h6>
                 </div>
               </div>
         </div>
@@ -32,21 +38,11 @@
     <div class="card card-stats crd">
       <div class="card-body ">
         <div class="row">
-          <div class="col-5 col-md-4">
-            
-            <div class="icon-big text-center icon-warning">
-              <!-- <i class="nc-icon nc-globe text-warning"></i> -->
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <small class="topTitle">                This Month
-              </small>
-            <div style="text-align: left;font-size: 40px;" class="numbers">
 
-              <!-- <p class="card-category">Capacity</p>
-              <p class="card-title">150GB
-                <p> -->
-                    23
+          <div class="col-7 col-md-12">
+            <small class="topTitle">This Month</small>
+            <div style="text-align: center;font-size: 40px;" class="numbers">
+{{counter}}
             </div>
           </div>
         </div>
@@ -64,21 +60,20 @@
     <div class="card card-stats crd">
       <div class="card-body ">
         <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <!-- <i class="nc-icon nc-money-coins text-success"></i> -->
-            </div>
-          </div>
-          <div class="col-7 col-md-8">
+   
+          <div class="col-7 col-md-12">
 
               <small class="topTitle">                Last Month
                 </small>
-            <div style="text-align: left;font-size: 20px;" class="numbers">
+            <div style="text-align: center;font-size: 20px;" class="numbers">
               <!-- <p class="card-category">Revenue</p>
               <p class="card-title">$ 1,345
                 <p> -->
-                    $ 23,852
-                   <small>Net Profit</small> 
+                    $ 0
+                    <br>
+                   <small style="font-size: 12px;">Net Profit</small> 
+                   <br>
+                   $ 0
             </div>
           </div>
         </div>
@@ -95,25 +90,28 @@
     <div class="card card-stats crd">
       <div class="card-body ">
         <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-vector text-danger"></i>
-            </div>
+      
+          <div class="col-7 col-md-12">
+
+            <small class="topTitle">                This Month
+              </small>
+          <div style="text-align: center;font-size: 20px;" class="numbers">
+            <!-- <p class="card-category">Revenue</p>
+            <p class="card-title">$ 1,345
+              <p> -->
+$ &nbsp; {{sale}}              <br>
+                 <small style="font-size: 12px;">Net Profit</small> 
+                 <br>
+                 $ &nbsp; {{profit}}
           </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Errors</p>
-              <p class="card-title">23
-                <p>
-            </div>
-          </div>
+        </div>
         </div>
       </div>
       <div class="card-footer ">
-        <hr>
-        <div class="stats">
+        <!-- <hr> -->
+        <!-- <div class="stats">
           <i class="fa fa-clock-o"></i> In the last hour
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -121,37 +119,39 @@
     <div class="card card-stats crd">
       <div class="card-body ">
         <div class="row">
-          <div class="col-5 col-md-4">
-            <div class="icon-big text-center icon-warning">
-              <i class="nc-icon nc-favourite-28 text-primary"></i>
+            <div class="col-7 col-md-12">
+
+                <small class="topTitle">                Sales Report
+                  </small>
+
+<img src="../../../assets/img//stgraph.png" alt="">
+
+
+           
             </div>
-          </div>
-          <div class="col-7 col-md-8">
-            <div class="numbers">
-              <p class="card-category">Followers</p>
-              <p class="card-title">+45K
-                <p>
-            </div>
-          </div>
+    
         </div>
       </div>
       <div class="card-footer ">
         <hr>
-        <div class="stats">
-          <i class="fa fa-refresh"></i> Update now
+        <div style="text-align: center;" class="stats">
+          March 2020
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="container">
 <div class="row">
   <div class="col-md-5">
-    <div class="card ">
+    <div class="card testCard">
       <div style="    text-align: center;
       " class="card-header ">
+
         <h5 class="card-title">Your Numbers</h5>
         <p class="card-category">summary list | sold numbers | listed numbers</p>
-<div class="row">
+        <div class="container">
+          <div class="row">
   <div class="col-md-4">
     <select class="select1" name="" id="">
       <option value="">Sort</option>
@@ -166,6 +166,8 @@
 
 
 </div>   
+</div>
+
    </div>
 
       <div class="card-body ">
@@ -188,7 +190,8 @@
             </p>
           </div>
           <div class="col-md-1">
-              <i class="fa fa-info-circle" aria-hidden="true"></i>
+              <!-- <i (click)="selectedOne(x)" class="fa fa-info-circle" aria-hidden="true"></i> -->
+              <i (click)="selectedOne(x)" class="fa fa-ellipsis-h"></i>
 
           </div>
 
@@ -247,6 +250,104 @@
 
 
 </select>
+
+<select [(ngModel)]="categories" name="cars" class="mdb-select md-form yourNumber"  multiple="multiple">
+  <option value="All auspicious numbers
+  ">All auspicious numbers
+</option>
+  <option value="Administrative and accounting
+  ">Administrative and accounting
+</option>
+  <option value="VIP numbers, Good grades
+  ">VIP numbers, Good grades
+</option>
+  <option value="Civil Servant, Employees
+  ">Civil Servant, Employees
+</option>
+  <option value="Celebrities and Media People
+  ">Celebrities and Media People
+</option>
+<option value="Legal Profession
+
+">Legal Profession
+
+</option> <option value="Students and Intellectuals
+
+">Students and Intellectuals
+
+</option> <option value="Dragon Numbers
+">Dragon Numbers
+
+</option>
+
+ <option value="Engineer
+
+">Engineer
+
+
+
+</option> <option value="Architect and Builders
+
+">Architect and Builders
+
+
+</option>
+
+<option value="IT and Technology
+
+
+">IT and Technology
+
+
+
+</option>
+
+<option value="Swan Numbers
+
+
+">Swan Numbers
+
+
+
+</option>
+
+<option value="Charm Numbers
+
+
+">Charm Numbers
+
+
+
+</option>
+
+
+<option value="Property Traders or Developers
+
+
+
+">Property Traders or Developers
+
+
+
+
+</option>
+
+<option value="Charm Numbers
+
+
+">Elderly Health Numbers
+
+
+
+
+</option>
+
+
+
+
+</select>
+
+
     <input [(ngModel)]="serialNumber" style="font-size: 14px;" placeholder="Serial Number" type="text" class="yourNumber" >
     <input [(ngModel)]="date" style="font-size: 14px;" value="" type="date" class="yourNumber" >
 <small style="font-size: 10px;">
@@ -272,9 +373,7 @@
     </h5>
     <small>Your Number</small>
   
-    <div class="yourNumber">
-      <input value="91995280" type="text" class="numberEntry">
-    </div>
+      <input [(ngModel)]="editNumber" value="91995280" type="text" class="yourNumber" disabled>
   
     <small style="float: left;">Suggested Price Valuation:</small>
     <small style="float: right;">$2986 - $3388</small>
@@ -285,19 +384,129 @@
     <small>Selling Price</small>
   
  
-      <input value="$2300" type="number" class="yourNumber">
+      <input [(ngModel)]="editPrice" value="$2300" type="number" class="yourNumber">
  
-  <select class="yourNumber"  name="" id="">
-  <option value="">Operator</option></select>
+  <select [(ngModel)]="editOperator" class="yourNumber"  name="" id="">
+    <option value="Singtel">Singtel</option>
+    <option value="M1">M1</option>
+    <option value="Starhub">Starhub</option>
+    <option value="Circles life">Circles life</option>
+    <option value="CM link">CM link</option>
+    <option value="Giga">Giga</option>
+    <option value="Gomo">Gomo</option>
+    <option value="Myrepublic">Myrepublic</option>
+    <option value="TPG">TPG</option>
+    <option value="VIVIFI">VIVIFI</option>
+    <option value="Zero1">Zero1</option>
+
+
+</select>
   
 
-      <input style="font-size: 14px;" value="Serial Number" type="text" class="yourNumber" >
-      <input style="font-size: 14px;" value="Serial Number" type="date" class="yourNumber" >
+<select [(ngModel)]="editCatrgory" name="cars" class="mdb-select md-form yourNumber"  multiple="multiple">
+  <option value="All auspicious numbers
+  ">All auspicious numbers
+</option>
+  <option value="Administrative and accounting
+  ">Administrative and accounting
+</option>
+  <option value="VIP numbers, Good grades
+  ">VIP numbers, Good grades
+</option>
+  <option value="Civil Servant, Employees
+  ">Civil Servant, Employees
+</option>
+  <option value="Celebrities and Media People
+  ">Celebrities and Media People
+</option>
+<option value="Legal Profession
+
+">Legal Profession
+
+</option> <option value="Students and Intellectuals
+
+">Students and Intellectuals
+
+</option> <option value="Dragon Numbers
+">Dragon Numbers
+
+</option>
+
+ <option value="Engineer
+
+">Engineer
+
+
+
+</option> <option value="Architect and Builders
+
+">Architect and Builders
+
+
+</option>
+
+<option value="IT and Technology
+
+
+">IT and Technology
+
+
+
+</option>
+
+<option value="Swan Numbers
+
+
+">Swan Numbers
+
+
+
+</option>
+
+<option value="Charm Numbers
+
+
+">Charm Numbers
+
+
+
+</option>
+
+
+<option value="Property Traders or Developers
+
+
+
+">Property Traders or Developers
+
+
+
+
+</option>
+
+<option value="Charm Numbers
+
+
+">Elderly Health Numbers
+
+
+
+
+</option>
+
+
+
+
+</select>
+
+
+      <input [(ngModel)]="editSerial" style="font-size: 14px;" value="  " type="text" class="yourNumber" >
+      <input [(ngModel)]="editDate" style="font-size: 14px;" value="" type="date" class="yourNumber" >
   <small style="font-size: 10px;">
       By clicking submit, you confirm that the number above belongs to you or your company, and you have the authority to trade and transfer the number to the buyer.
   </small>
   <div style="text-align: center;">
-  <button style="background: #EB8989 0% 0% no-repeat padding-box;" class="subTon">
+  <button (click)="updateNumber()" style="background: #EB8989 0% 0% no-repeat padding-box;" class="subTon">
     Save Changes
   </button>
   
@@ -308,6 +517,7 @@
   
     </div>
   </div>
+</div>
 </div>
 <!-- <div class="row">
   <div class="col-md-4">
