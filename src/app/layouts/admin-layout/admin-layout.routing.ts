@@ -13,7 +13,7 @@ import {ChatComponent} from '../../chat/chat.component'
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user',           component: UserComponent },
-    { path: 'table',          component: TableComponent },
+    { path: 'order',          component: TableComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },

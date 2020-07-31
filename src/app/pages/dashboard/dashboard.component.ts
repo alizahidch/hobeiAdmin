@@ -269,7 +269,8 @@ number:this.number,
 price:Number(this.price),
 operator:this.operator,
 date:this.date,
-categories:this.categories
+categories:this.categories,
+sold_status:false
 
 }
 console.log(this.dataObj)
@@ -292,7 +293,10 @@ updateNumber(){
   price:Number(this.editPrice),
   operator:this.editOperator,
   date:this.editDate,
-  categories:this.editCatrgory
+  categories:this.editCatrgory,
+  sold_status:false
+
+  
   
   }
   this.api.createNummber(this.editObj).then(()=>{

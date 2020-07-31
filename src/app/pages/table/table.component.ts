@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import{NumberAdminService} from '../../services/number-admin.service'
+
 
 declare interface TableData {
     headerRow: string[];
     dataRows: string[][];
 }
+
 
 @Component({
     selector: 'table-cmp',
@@ -12,11 +15,18 @@ declare interface TableData {
 })
 
 export class TableComponent implements OnInit{
+    orders;
+    constructor(private api:NumberAdminService){
+        this.api.fetchOrders().subscribe(res=>{
+            console.log(res);
+            this.orders=res;
+        })
+    }
     public tableData1: TableData;
     public tableData2: TableData;
     ngOnInit(){
         this.tableData1 = {
-            headerRow: [ 'ID', 'Name', 'Country', 'City', 'Salary'],
+            headerRow: [ 'Number ID', 'Email', 'Country', 'Payment Method', 'Total','Status'],
             dataRows: [
                 ['1', 'Dakota Rice', 'Niger', 'Oud-Turnhout', '$36,738'],
                 ['2', 'Minerva Hooper', 'Curaçao', 'Sinaai-Waas', '$23,789'],
