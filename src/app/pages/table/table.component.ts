@@ -24,6 +24,11 @@ export class TableComponent implements OnInit{
     }
     public tableData1: TableData;
     public tableData2: TableData;
+
+
+
+
+
     ngOnInit(){
         this.tableData1 = {
             headerRow: [ 'Number ID', 'Email', 'Country', 'Payment Method', 'Total','Status'],
@@ -48,4 +53,10 @@ export class TableComponent implements OnInit{
             ]
         };
     }
+
+
+    change(x){
+x.status="success"
+    }
 }
+

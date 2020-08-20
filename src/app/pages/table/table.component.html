@@ -26,6 +26,10 @@
               <th>
                 Status
               </th>
+              <th>
+                  File
+                </th>
+            
             </thead>
             <tbody>
            
@@ -43,10 +47,25 @@
 <td>
   {{x.order_total}}
 </td>
-<td>
+<td >
   {{x.status}}
+  <i (click)="change(x)"  *ngIf="x.status=='pending'" style="color: green;" class="fa fa-check" aria-hidden="true"></i>
 </td>
-              </tr>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+<td *ngIf="x.payment_method=='bank_transfer' else elseBlock">
+  <a target="_blank" href="{{x.url}}">
+      <i  class="fa fa-file" aria-hidden="true"></i>
+
+  </a>
+  
+</td>
+
+
+        </tr>
             </tbody>
           </table>
         </div>
