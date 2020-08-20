@@ -151,15 +151,15 @@ $ &nbsp; {{sale}}              <br>
         <h5 class="card-title">Your Numbers</h5>
         <div class="row">
           <div class="col-md-4 ">
-        <p (click)="sold('simple')" class="card-category">summary list   </p>
+        <p [ngStyle]="{'font-weight':selectedFilter === 'simple' ? 'bold' : '400' }" (click)="sold('simple')" class="card-category">summary list   </p>
           </div>
           <div class="col-md-4 ">
 
-        <p (click)="sold('sold')" class="card-category">sold numbers  </p>
+        <p [ngStyle]="{'font-weight':selectedFilter === 'sold' ? 'bold' : '400' }" (click)="sold('sold')" class="card-category">sold numbers  </p>
           </div>
           <div class="col-md-4 ">
 
-        <p (click)="sold('listed')" class="card-category"> listed numbers</p>
+        <p [ngStyle]="{'font-weight':selectedFilter === 'listed' ? 'bold' : '400' }" (click)="sold('listed')" class="card-category"> listed numbers</p>
           </div>
       </div>
         <div class="container">

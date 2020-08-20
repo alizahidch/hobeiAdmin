@@ -279,6 +279,7 @@ checkCat=[
       this.api.fetchNumbers().subscribe(res=>{
 this.resultNummbers=res;
 this.filteredArray=res;
+this.selectedFilter='simple'
       })
 
 
