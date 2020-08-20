@@ -16,7 +16,12 @@ import { ChatComponent } from './chat/chat.component';
 import { environment } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
-import {NumberAdminService} from '../../src/app/services/number-admin.service'
+import {NumberAdminService} from '../../src/app/services/number-admin.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import * as $ from 'jquery';
+
+
 
 @NgModule({
   declarations: [
@@ -27,6 +32,8 @@ import {NumberAdminService} from '../../src/app/services/number-admin.service'
   imports: [
     BrowserAnimationsModule,    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(AppRoutes,{
       useHash: true
     }),
