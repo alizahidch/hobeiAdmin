@@ -149,9 +149,21 @@ $ &nbsp; {{sale}}              <br>
       " class="card-header ">
 
         <h5 class="card-title">Your Numbers</h5>
-        <p class="card-category">summary list | sold numbers | listed numbers</p>
+        <div class="row">
+          <div class="col-md-4 ">
+        <p (click)="sold('simple')" class="card-category">summary list   </p>
+          </div>
+          <div class="col-md-4 ">
+
+        <p (click)="sold('sold')" class="card-category">sold numbers  </p>
+          </div>
+          <div class="col-md-4 ">
+
+        <p (click)="sold('listed')" class="card-category"> listed numbers</p>
+          </div>
+      </div>
         <div class="container">
-          <div class="row">
+          <!-- <div class="row">
   <div class="col-md-4">
     <select class="select1" name="" id="">
       <option value="">Sort</option>
@@ -165,21 +177,21 @@ $ &nbsp; {{sale}}              <br>
     </select></div>
 
 
-</div>   
+</div>    -->
 </div>
 
    </div>
 
       <div class="card-body ">
         <!-- <canvas id=chartHours width="400" height="100"></canvas> -->
-        <div *ngFor="let x of resultNummbers" class="row">
+        <div *ngFor="let x of filteredArray" class="row">
           <div class="col-md-4">
             <small>Expiry: {{x.date}}</small>
             <p class="numberDisp">{{x.number}}</p>
           </div>
           <!-- <div class="dropdownBar"></div> -->
 
-          <div class="col-md-3">
+          <div class="col-md-2">
             <small>Views</small>
             <p class="numberDisp">102</p>
           </div>
@@ -190,8 +202,13 @@ $ &nbsp; {{sale}}              <br>
             </p>
           </div>
           <div class="col-md-1">
+              <i  data-toggle="tooltip" data-placement="top" title="Sold" *ngIf="x.sold_status==true" style="color: green;" class="fa fa-check" aria-hidden="true"></i>
+              <i data-toggle="tooltip" data-placement="top" title="Not Sold" *ngIf="x.sold_status==false" style="color: red;"  class="fa fa-times"></i>
+
+          </div>
+          <div class="col-md-1">
               <!-- <i (click)="selectedOne(x)" class="fa fa-info-circle" aria-hidden="true"></i> -->
-              <i (click)="selectedOne(x)" class="fa fa-ellipsis-h"></i>
+              <i *ngIf="selectedFilter=='listed'" (click)="selectedOne(x)" class="fa fa-ellipsis-h"></i>
 
           </div>
 
@@ -251,7 +268,7 @@ $ &nbsp; {{sale}}              <br>
 
 </select>
 
-<select [(ngModel)]="categories" name="cars" class="mdb-select md-form yourNumber1"  multiple="multiple">
+<!-- <select [(ngModel)]="categories" name="cars" class="mdb-select md-form yourNumber1"  multiple="multiple">
   <option value="All auspicious numbers
   ">All auspicious numbers
 </option>
@@ -345,7 +362,51 @@ $ &nbsp; {{sale}}              <br>
 
 
 
-</select>
+</select> -->
+
+<button type="button" class="btn btn-primary yourNumber" data-toggle="modal" data-target="#exampleModal" (click)="openModal()">
+Choose categories</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+        <h5 style="float: left;" class="modal-title" id="exampleModalLabel">Categories</h5>
+      </div>
+      <div style="margin-left: 1%;" class="modal-body">
+
+         
+
+
+        <div class="form-check">
+       <div *ngFor="let x of checkCat" class="row">
+            <label  class="form-check-label col-md-12">
+                <input (change)="eventCheck($event.target.checked ? 'on' : 'off')" (click)="  clickCheck(x)" class="form-check-input" type="checkbox" value="">
+          {{x}}
+                <span class="form-check-sign">
+                    <span class="check"></span>
+                </span>
+            </label>
+          </div>
+      </div>
+      
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 
     <input [(ngModel)]="serialNumber" style="font-size: 14px;" placeholder="Serial Number" type="text" class="yourNumber" >
@@ -403,7 +464,7 @@ $ &nbsp; {{sale}}              <br>
 </select>
   
 
-<select [(ngModel)]="editCatrgory" name="cars" class="mdb-select md-form yourNumber1"  multiple="multiple">
+<!-- <select [(ngModel)]="editCatrgory" name="cars" class="mdb-select md-form yourNumber1"  multiple="multiple">
   <option value="All auspicious numbers
   ">All auspicious numbers
 </option>
@@ -497,8 +558,44 @@ $ &nbsp; {{sale}}              <br>
 
 
 
-</select>
-
+</select> -->
+<button type="button" class="btn btn-primary yourNumber" data-toggle="modal" data-target="#exampleModal" (click)="openModal()">
+    Choose categories</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+            <h5 style="float: left;" class="modal-title" id="exampleModalLabel">Categories</h5>
+          </div>
+          <div style="margin-left: 1%;" class="modal-body">
+    
+             
+    
+    
+            <div class="form-check">
+           <div *ngFor="let x of checkCat" class="row">
+                <label  class="form-check-label col-md-12">
+                    <input (change)="eventCheck($event.target.checked ? 'on' : 'off')" (click)="  clickCheck(x)" class="form-check-input" type="checkbox" value="">
+              {{x}}
+                    <span class="form-check-sign">
+                        <span class="check"></span>
+                    </span>
+                </label>
+              </div>
+          </div>
+          
+         
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <input [(ngModel)]="editSerial" style="font-size: 14px;" value="  " type="text" class="yourNumber" >
       <input [(ngModel)]="editDate" style="font-size: 14px;" value="" type="date" class="yourNumber" >

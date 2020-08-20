@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
-import { ConditionalExpr } from '@angular/compiler';
+import { ConditionalExpr, ThrowStmt } from '@angular/compiler';
 import { NumberAdminService } from 'app/services/number-admin.service';
-import {Observable} from 'rxjs'
+import {Observable} from 'rxjs';
+declare var $: any;
+
 
 @Component({
     selector: 'dashboard-cmp',
@@ -36,8 +38,53 @@ counter;
 sale;
 profit;
 categories=[];
+check:any=[];
+filteredArray=[];
+checked;
+selectedFilter;
+
+checkCat=[
+  "All auspicious numbers",
+
+  
+  "Administrative and accounting ",
+
+   " VIP numbers, Good grades ",
+
+    "Civil Servant, Employees ",
+
+    "Celebrities and Media People ",
+
+  "Legal Profession ",
+
+ "Students and Intellectuals ",
+
+ "Dragon Numbers ",
+
+ "Engineer ",
+
+ "Architect and Builders ",
+
+ "IT and Technology ",
+
+ "Swan Numbers ",
+
+ "Charm Numbers ",
+
+ "Property Traders or Developers ",
+
+ "Elderly Health Numbers "
+]
+
 
     ngOnInit(){
+
+
+
+
+
+
+
       this.chartColor = "#FFFFFF";
 
       this.canvas = document.getElementById("chartHours");
@@ -231,6 +278,7 @@ categories=[];
     constructor(public api:NumberAdminService){
       this.api.fetchNumbers().subscribe(res=>{
 this.resultNummbers=res;
+this.filteredArray=res;
       })
 
 
@@ -244,6 +292,37 @@ this.profit=this.counter*10;})
 
     }
 
+
+
+    clickCheck(cat){
+this.checked=cat;   
+
+    }
+
+
+
+
+
+    eventCheck(x){
+      console.log(x)
+      if(x=="on"){
+        this.check.push(this.checked)
+
+      }
+      else{
+        let dummy=[];
+        this,this.check.forEach(element => {
+          if(element!==this.checked){
+            dummy.push(element)
+          }
+        });
+        this.check=dummy
+            }
+
+      console.log(this.check)
+
+    }
+
     selectedOne(x){
       this.editNumber=x.number;
       this.editPrice=x.price;
@@ -252,6 +331,34 @@ this.profit=this.counter*10;})
       this.editDate=x.date;
       this.editCatrgory=x.categories;
     }
+
+
+
+    openModal()
+    {
+      ($('#exampleModal') as any).modal('show');
+    }
+
+
+
+sold(x){
+  this.selectedFilter=x;
+if(x=='sold'){
+  this.filteredArray=this.resultNummbers.filter(s => s.sold_status===true);
+console.log(this.filteredArray)
+}
+else if(x=='listed')
+{
+  this.filteredArray=this.resultNummbers.filter(s => s.sold_status===false);
+
+}
+else if(x=='simple')
+{
+  this.filteredArray=this.resultNummbers;
+
+}
+
+}
 
 
 
@@ -269,7 +376,7 @@ number:this.number,
 price:Number(this.price),
 operator:this.operator,
 date:this.date,
-categories:this.categories,
+categories:this.check,
 sold_status:false
 
 }
@@ -293,7 +400,7 @@ updateNumber(){
   price:Number(this.editPrice),
   operator:this.editOperator,
   date:this.editDate,
-  categories:this.editCatrgory,
+  categories:this.check,
   sold_status:false
 
   
