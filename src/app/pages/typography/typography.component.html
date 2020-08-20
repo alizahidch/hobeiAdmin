@@ -2,10 +2,147 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h5 class="title">Paper Table Heading</h5>
-        <p class="category">Created using Montserrat Font Family</p>
+        <h5 class="title">HOBEI CO </h5>
+        <p class="category">Categories</p>
       </div>
+
       <div class="card-body">
+        <form>
+          <!-- <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Company (disabled)</label>
+                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+              </div>
+            </div>
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="Username" value="michael23">
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="Company" value="Chet">
+              </div>
+            </div>
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" value="Faker">
+              </div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="col-md-12">
+              <div name="simpleForm" class="form-group">
+                <label>Category</label>
+                <!-- <select [(ngModel)]="category" name="cat" class="form-control" id="exampleFormControlSelect1">
+                    <option>Numerology</option>
+                    <option>Double Number</option>
+                    <option>Tri Number</option>
+                    <option>Lifestyle</option>
+                    <option>Current Affairs</option>
+                    <option>Love</option>
+                    <option>Telcos</option>
+
+                  </select> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-12">
+                <div name="simpleForm" class="form-group">
+             <input type="text" class="form-control textarea" name="gla" [(ngModel)]="ncategory">
+                </div>
+              </div>
+            </div>
+          <!-- <div class="row">
+            <div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" class="form-control" placeholder="City" value="Melbourne">
+              </div>
+            </div>
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" class="form-control" placeholder="Country" value="Australia">
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label>Postal Code</label>
+                <input type="number" class="form-control" placeholder="ZIP Code">
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Description</label>
+                <textarea [(ngModel)]="description" name="desc" class="form-control textarea"></textarea>
+              </div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button (click)="createCategory()" type="submit" class="btn btn-primary btn-round">Create Category</button>
+            </div>
+          </div>
+        </form>
+        <div>
+<div style="max-width:200px;max-height:100px;margin: 0px auto;margin-bottom: 1%;padding: 1%;margin-top: 1%;" *ngFor="let x of categories" class="card shadow rounded ">
+<h7> {{x.category_name}}</h7>
+<ion-row><ion-col>
+  <i (click)="delete(x)" class="fa fa-trash-o"></i>
+  <i (click)="edit(x)" data-toggle="modal" data-target="#exampleModal"style="float: right;" class="fa fa-pencil"></i>
+</ion-col></ion-row>
+
+
+</div>
+
+
+
+
+      </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div style="text-align: center;" class="modal-body">
+        <input  type="text" [(ngModel)]="editName" >
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="update()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <!-- <div class="card-body">
         <div class="typography-line">
           <h1>
             <span>Header 1</span>The Life of Paper Dashboard </h1>
@@ -89,7 +226,7 @@
             <small>Use "small" tag for the headers</small>
           </h2>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
