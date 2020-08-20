@@ -14,10 +14,12 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard',     title: 'Manage Numbers',         icon:'nc-bank',       class: 'rightSide' },
     { path: '/#',         title: 'Customer Management',             icon:'nc-diamond',    class: 'rightSide' },
     { path: '/#',          title: 'Reports',              icon:'nc-pin-3',      class: 'rightSide' },
-    { path: '/#', title: 'Inbox',     icon:'nc-bell-55',    class: 'rightSide' },
+    // { path: '/#', title: 'Inbox',     icon:'nc-bell-55',    class: 'rightSide' },
     // { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
     { path: '/order',         title: 'Orders',        icon:'nc-tile-56',    class: 'rightSide' },
-    // { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
+    { path: '/article',         title: 'Article',        icon:'nc-tile-56',    class: 'rightSide' },
+
+    { path: '/categories',    title: 'Categories',        icon:'nc-caps-small', class: 'rightSide' },
     // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 ];
 
