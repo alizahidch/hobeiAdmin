@@ -12,9 +12,9 @@ import {ChatComponent} from '../../chat/chat.component'
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user',           component: UserComponent },
+    { path: 'article',           component: UserComponent },
     { path: 'order',          component: TableComponent },
-    { path: 'typography',     component: TypographyComponent },
+    { path: 'categories',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
